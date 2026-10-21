@@ -1,0 +1,67 @@
+# 依赖
+node_modules/
+
+# 打包产物 / 本地二进制（Electron 应用等）
+OpenCode Bridge/
+
+# 构建产物
+dist/
+
+# 环境变量和敏感配置
+.env
+*.env.local
+.env.backup
+
+# SQLite 配置数据库（含敏感凭证，不入库）
+data/config.db
+data/
+
+# 前端依赖
+web/node_modules/
+
+# 日志文件
+logs/
+*.log
+
+# 会话数据（用户隐私）
+.session-*.json
+.chat-sessions.json
+.user-sessions.json
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# TypeScript
+*.tsbuildinfo
+
+# Sisyphus AI 代理工作目录
+.sisyphus/
+memory/
+
+# Claude Code 配置
+.claude/
+
+# CodePilot uploads
+.codepilot-uploads/
+
+# 临时文档
+HEARTBEAT.md
+PLAN.md
+PLAN_*.md
+
+# 本地开发包和临时组件
+package/
+*.tgz

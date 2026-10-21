@@ -1,0 +1,86 @@
+{
+  "name": "opencode-bridge",
+  "version": "2.9.52",
+  "type": "module",
+  "description": "Feishu / Discord × OpenCode bridge service with runtime cron and reliability tooling",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "opencode-bridge": "bin/opencode-bridge.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "scripts": {
+    "preinstall": "node scripts/setup-mirror.mjs",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "build:web": "cd web && pnpm install && pnpm run build",
+    "build:all": "npm run build:web && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node scripts/start.mjs",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm run build",
+    "deploy:bridge": "node scripts/deploy.mjs deploy",
+    "manage:bridge": "node scripts/deploy.mjs menu",
+    "start:bridge": "node scripts/start.mjs",
+    "stop:bridge": "node scripts/stop.mjs"
+  },
+  "keywords": [
+    "feishu",
+    "discord",
+    "opencode",
+    "bridge",
+    "cli",
+    "chatbot",
+    "ai"
+  ],
+  "author": "HNGM-HP",
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HNGM-HP/opencode-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HNGM-HP/opencode-bridge/issues"
+  },
+  "homepage": "https://github.com/HNGM-HP/opencode-bridge#readme",
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "^1.36.3",
+    "@wecom/aibot-node-sdk": "^1.0.4",
+    "@whiskeysockets/baileys": "^7.0.0-rc.9",
+    "better-sqlite3": "^12.8.0",
+    "dingtalk-stream": "^2.1.4",
+    "discord.js": "^14.25.1",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "grammy": "^1.41.1",
+    "node-cron": "^4.2.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.0",
+    "@types/qrcode": "^1.5.6",
+    "puppeteer": "^24.40.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
