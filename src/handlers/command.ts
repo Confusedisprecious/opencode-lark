@@ -1879,12 +1879,11 @@ export class CommandHandler {
         .filter(item => item.value),
     ];
 
-    // 当前厂商：优先使用用户选中的；否则从当前模型推断
+    // 当前厂商：用户显式选择时用所选厂商；否则默认「全部厂商」，让 free 免费模型优先可见
     const preferredModel = session?.preferredModel || '';
-    const preferredProvider = preferredModel.includes(':') ? preferredModel.split(':')[0] : undefined;
     const resolvedProvider = selectedProvider !== undefined
       ? (selectedProvider === PANEL_PROVIDER_ALL_VALUE ? undefined : selectedProvider)
-      : (preferredProvider || undefined);
+      : undefined;
 
     // 构建模型选项（可按厂商过滤）
     const modelOptions: { label: string; value: string }[] = [];
