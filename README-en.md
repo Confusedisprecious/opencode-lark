@@ -16,12 +16,7 @@
 
 ## ⚠️ Supported Platforms
 
-| Platform | Status |
-|----------|--------|
-| **Feishu (Lark)** | ✅ **Fully supported (recommended)** |
-| Discord / WeCom / Telegram / QQ / WhatsApp / WeChat / DingTalk | ⚠️ **Not verified with opencode v2** |
-
-> **Important**: Only **Feishu** is guaranteed to work. Adapter code for other platforms is inherited from the original project but has **not been verified** with the opencode v2 refactor. Do not use them in production.
+This bridge **only supports Feishu (Lark)**. Other instant messaging platforms are out of scope for this project.
 
 ---
 
@@ -147,8 +142,6 @@ Key modules:
 | [Deployment](assets/docs/deployment.md) | Deployment & upgrade |
 | [Reliability](assets/docs/reliability.md) | Heartbeat, cron, crash rescue |
 
-> Docs for other platforms (Discord/WeCom/Telegram/QQ/WhatsApp/WeChat/DingTalk) are kept for reference only and are **not v2-verified**.
-
 ---
 
 ## 📋 Requirements
@@ -167,5 +160,4 @@ Key modules:
 
 ## 🤝 Contributing
 
-- Issues & PRs are welcome, especially **opencode v2 adaptation** fixes
-- If you verify another platform, please update the docs and tests accordingly
+Issues & PRs are welcome, especially **opencode v2 adaptation** fixes.
